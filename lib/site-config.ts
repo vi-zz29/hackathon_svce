@@ -33,6 +33,9 @@ export const siteConfig = {
   /** Human-readable date shown in badges once announced, e.g. "14–15 February 2027". */
   eventDateLabel: null as string | null,
 
+  /** Human-readable registration opening date shown in the registration page badge. */
+  registrationDateLabel: '30th November' as string | null,
+
   /**
    * Internal registration route. Set to '/register' to enable the built-in
    * registration form, or point to an external Google Form URL.
@@ -62,7 +65,7 @@ export const siteConfig = {
   teamSizeMin: 2,
 
   /** Maximum team size. */
-  teamSizeMax: 10,
+  teamSizeMax: 4,
 
   /** Prize summary, e.g. "₹50,000 prize pool". While null, shows "PRIZE DETAILS TO BE ANNOUNCED". */
   prizes: null as string | null,

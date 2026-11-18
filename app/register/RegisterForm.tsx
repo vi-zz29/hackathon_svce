@@ -2,7 +2,7 @@
 
 import { useCallback, useId, useRef, useState } from 'react'
 import { CheckCircle, ChevronDown, ChevronUp, Trophy, UserPlus, X } from 'lucide-react'
-import { registrationSchema, DOMAINS, type RegistrationInput, type MemberInput } from '@/lib/validation/registration'
+import { registrationSchema, DOMAINS, SEMESTERS, SECTIONS, type RegistrationInput, type MemberInput } from '@/lib/validation/registration'
 import { siteConfig } from '@/lib/site-config'
 import { ComicInput, ComicSelect, ComicTextarea, ComicCheckbox, SubmitButton } from '@/components/form'
 import { cn } from '@/lib/utils'
@@ -19,14 +19,16 @@ type FieldErrors = Partial<Record<string, string>>
 
 const EMPTY_MEMBER: MemberInput = {
   fullName: '',
-  email: '',
   phone: '',
-  department: '',
-  yearOfStudy: 1,
+  email: '',
   usn: '',
+  department: '',
+  semester: 1,
+  section: 'A',
 }
 
-const YEAR_OPTIONS = [1, 2, 3, 4].map((y) => ({ value: y, label: `Year ${y}` }))
+const SEMESTER_OPTIONS = SEMESTERS.map((s) => ({ value: s, label: `Semester ${s}` }))
+const SECTION_OPTIONS = SECTIONS.map((s) => ({ value: s, label: `Section ${s}` }))
 const SIZE_OPTIONS = [2, 3, 4].map((n) => ({ value: n, label: `${n} members` }))
 const DOMAIN_OPTIONS = DOMAINS.map((d) => ({ value: d, label: d }))
 
@@ -129,12 +131,20 @@ function MemberBlock({
             placeholder="e.g. Computer Science"
           />
           <ComicSelect
-            label="Year of Study"
+            label="Semester"
             required
-            options={YEAR_OPTIONS}
-            value={value.yearOfStudy}
-            onChange={(e) => onChange(index, 'yearOfStudy', Number(e.target.value))}
-            error={getFieldError(errors, `${prefix}.yearOfStudy`)}
+            options={SEMESTER_OPTIONS}
+            value={value.semester}
+            onChange={(e) => onChange(index, 'semester', Number(e.target.value))}
+            error={getFieldError(errors, `${prefix}.semester`)}
+          />
+          <ComicSelect
+            label="Section"
+            required
+            options={SECTION_OPTIONS}
+            value={value.section}
+            onChange={(e) => onChange(index, 'section', e.target.value)}
+            error={getFieldError(errors, `${prefix}.section`)}
           />
           <ComicInput
             label="USN / Roll Number"
@@ -217,6 +227,7 @@ export function RegisterForm() {
 
   const [teamName, setTeamName] = useState('')
   const [teamSize, setTeamSize] = useState(2)
+  const [contactEmail, setContactEmail] = useState('')
   const [members, setMembers] = useState<MemberInput[]>([{ ...EMPTY_MEMBER }, { ...EMPTY_MEMBER }])
   const [domainInterest, setDomainInterest] = useState('')
   const [projectNote, setProjectNote] = useState('')
@@ -269,6 +280,7 @@ export function RegisterForm() {
     const payload: RegistrationInput = {
       teamName,
       teamSize,
+      contactEmail,
       members,
       domainInterest: domainInterest as RegistrationInput['domainInterest'] || null,
       projectNote: projectNote || null,
@@ -411,6 +423,19 @@ export function RegisterForm() {
               value={teamSize}
               onChange={(e) => handleSizeChange(Number(e.target.value))}
               error={getFieldError(fieldErrors, 'teamSize')}
+            />
+            <ComicInput
+              label="Contact Email"
+              type="email"
+              required
+              value={contactEmail}
+              onChange={(e) => {
+                setContactEmail(e.target.value)
+                setFieldErrors((prev) => { const n = { ...prev }; delete n.contactEmail; return n })
+              }}
+              error={getFieldError(fieldErrors, 'contactEmail')}
+              hint="Primary contact email for the team"
+              autoComplete="email"
             />
           </div>
         </fieldset>

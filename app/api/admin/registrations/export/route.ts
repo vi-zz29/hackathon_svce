@@ -48,25 +48,29 @@ export async function GET(req: NextRequest) {
       'Member 1 Email',
       'Member 1 Phone',
       'Member 1 Dept',
-      'Member 1 Year',
+      'Member 1 Semester',
+      'Member 1 Section',
       'Member 1 USN',
       'Member 2 Name',
       'Member 2 Email',
       'Member 2 Phone',
       'Member 2 Dept',
-      'Member 2 Year',
+      'Member 2 Semester',
+      'Member 2 Section',
       'Member 2 USN',
       'Member 3 Name',
       'Member 3 Email',
       'Member 3 Phone',
       'Member 3 Dept',
-      'Member 3 Year',
+      'Member 3 Semester',
+      'Member 3 Section',
       'Member 3 USN',
       'Member 4 Name',
       'Member 4 Email',
       'Member 4 Phone',
       'Member 4 Dept',
-      'Member 4 Year',
+      'Member 4 Semester',
+      'Member 4 Section',
       'Member 4 USN',
     ]
       .map(escapeCsv)
@@ -86,7 +90,7 @@ export async function GET(req: NextRequest) {
     ]
     for (let i = 0; i < 4; i++) {
       const m = team.members[i]
-      cols.push(m?.fullName, m?.email, m?.phone, m?.department, m?.yearOfStudy, m?.usn)
+      cols.push(m?.fullName, m?.email, m?.phone, m?.department, m?.semester, m?.section, m?.usn)
     }
     rows.push(cols.map(escapeCsv).join(','))
   }

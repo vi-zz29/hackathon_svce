@@ -195,6 +195,7 @@ export async function createRegistration(
           teamId: team.id,
           isLeader: idx === 0,
           fullName: m.fullName,
+          phone: m.phone,
           usn: m.usn,
           department: m.department,
           semester: m.semester,

@@ -33,6 +33,11 @@ export const memberSchema = z.object({
     .min(2, 'Full name must be at least 2 characters')
     .max(100, 'Full name is too long')
     .trim(),
+  phone: z
+    .string()
+    .min(10, 'Phone number must be at least 10 digits')
+    .max(15, 'Phone number is too long')
+    .regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit Indian mobile number starting with 6–9'),
   usn: z
     .string()
     .min(2, 'USN / Roll number is required')
@@ -78,7 +83,7 @@ export const registrationSchema = z
       .number({ invalid_type_error: 'Select a team size' })
       .int()
       .min(2, 'Minimum team size is 2')
-      .max(10, 'Maximum team size is 10'),
+      .max(4, 'Maximum team size is 4'),
     contactEmail: z
       .string()
       .email('Enter a valid contact email')
@@ -88,7 +93,7 @@ export const registrationSchema = z
     members: z
       .array(memberSchema)
       .min(2, 'At least 2 members are required')
-      .max(10, 'Maximum 10 members allowed'),
+      .max(4, 'Maximum 4 members allowed'),
     domainInterest: z
       .enum(DOMAINS, { errorMap: () => ({ message: 'Select a valid domain' }) })
       .optional()
@@ -127,6 +132,7 @@ export function normalizeRegistration(input: RegistrationInput): RegistrationInp
     contactEmail: input.contactEmail.toLowerCase().trim(),
     members: input.members.map((m) => ({
       ...m,
+      phone: m.phone.trim(),
       email: m.email.toLowerCase().trim(),
       usn: m.usn.toUpperCase().trim(),
       section: m.section.toUpperCase().trim(),

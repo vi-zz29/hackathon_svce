@@ -45,6 +45,7 @@ model Member {
   teamId      String   @map("team_id")
   isLeader    Boolean  @default(false) @map("is_leader")
   fullName    String   @map("full_name")
+  phone       String   @map("phone_number")  // contact phone number
   usn         String   // university seat number / roll number
   department  String
   semester    Int      // 1–8
