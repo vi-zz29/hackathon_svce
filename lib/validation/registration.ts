@@ -40,10 +40,12 @@ export const memberSchema = z.object({
     .regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit Indian mobile number starting with 6–9'),
   usn: z
     .string()
-    .min(2, 'USN / Roll number is required')
-    .max(20, 'USN is too long')
     .trim()
-    .toUpperCase(),
+    .toUpperCase()
+    .regex(
+      /^1VE\d{2}[A-Z]{2}\d{3}$/,
+      'USN must be in SVCE format: 1VEyyBBnnn (e.g. 1VE22CS001)',
+    ),
   department: z
     .string()
     .min(2, 'Department is required')

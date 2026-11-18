@@ -38,10 +38,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-paper">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <a href="#home" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+        <a href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <SvceLogo size={38} />
           <HyperionBadge />
-          <span className="sr-only">Back to top</span>
+          <span className="sr-only">Back to home</span>
         </a>
 
         <nav aria-label="Primary" className="hidden lg:block">

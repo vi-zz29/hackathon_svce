@@ -104,13 +104,12 @@ function MemberBlock({
             autoComplete="name"
           />
           <ComicInput
-            label="College Email"
+            label="Email"
             type="email"
             required
             value={value.email}
             onChange={(e) => onChange(index, 'email', e.target.value)}
             error={getFieldError(errors, `${prefix}.email`)}
-            hint="Use your official SVCE email"
             autoComplete="email"
           />
           <ComicInput
