@@ -243,6 +243,7 @@ export async function getRegistrationSummary(registrationCode: string) {
           id: true,
           isLeader: true,
           fullName: true,
+          phone: true,
           usn: true,
           department: true,
           semester: true,

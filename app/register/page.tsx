@@ -26,7 +26,7 @@ export default function RegisterPage() {
           <div className="flex flex-wrap gap-3">
             <p className="inline-flex items-center gap-2 bg-ink px-4 py-2 font-display text-xl tracking-wide text-comic-yellow">
               <CalendarClock className="size-5" />
-              Registration opens: {siteConfig.registrationDateLabel ?? 'DATE TO BE ANNOUNCED'}
+              Hackathon Date: {siteConfig.hackathonDate ?? 'DATE TO BE ANNOUNCED'}
             </p>
             <p className="inline-flex items-center gap-2 border-[3px] border-ink bg-comic-yellow px-4 py-2 font-display text-xl tracking-wide">
               Team size: {siteConfig.teamSizeMin}–{siteConfig.teamSizeMax} members
