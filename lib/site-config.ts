@@ -68,7 +68,7 @@ export const siteConfig = {
   teamSizeMax: 4,
 
   /** Prize summary, e.g. "₹50,000 prize pool". While null, shows "PRIZE DETAILS TO BE ANNOUNCED". */
-  prizes: null as string | null,
+  prizes: '₹25,000 Prize Pool' as string | null,
 
   /** Official contact email. While null, shows "Official email coming soon". */
   contactEmail: null as string | null,
