@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'When will the date, schedule and prizes be announced?',
-    a: 'The event date, detailed schedule and prize information will be announced on this website soon.',
+    a: 'The hackathon is on 30th November. The prize pool is ₹25,000. The detailed schedule will be announced on this website soon.',
   },
   {
     q: 'Can I edit my registration after submitting?',
