@@ -16,7 +16,6 @@ export function PrizesSection() {
             {siteConfig.prizes ?? 'PRIZE DETAILS TO BE ANNOUNCED'}
           </p>
           <p data-reveal="up" style={{ ['--reveal-delay' as string]: '350ms' }} className="max-w-md text-lg leading-relaxed">
-            Prizes and recognitions will be revealed soon. Check back here for the next issue.
           </p>
         </div>
         <div data-reveal="pop" className="relative mx-auto w-full max-w-md">
