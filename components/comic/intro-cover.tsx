@@ -101,7 +101,7 @@ function WideCover({ phase, onOpen, onSkip }: CoverProps) {
         <SvceLogo size={44} priority />
       </header>
 
-      <div className="grid min-h-0 flex-1 grid-cols-[1.05fr_1fr] border-t-4 border-ink">
+      <div className="grid min-h-0 flex-1 grid-cols-[1.4fr_0.6fr] border-t-4 border-ink">
         <div className="halftone relative flex min-h-0 flex-col justify-center gap-[clamp(0.75rem,2.4vh,1.75rem)] overflow-hidden border-r-4 border-ink bg-paper px-[clamp(1.5rem,4vw,4rem)] py-[clamp(1rem,3vh,2.5rem)]">
           <div className="flex flex-wrap items-center gap-3">
             <SvceLogo size={40} />
@@ -140,7 +140,7 @@ function WideCover({ phase, onOpen, onSkip }: CoverProps) {
           </div>
         </div>
 
-        <div className="relative min-h-0 overflow-hidden bg-paper">
+        <div className="relative min-h-0 overflow-hidden bg-paper flex items-center justify-center">
           <Image
             src="/images/cover-art.png"
             alt={COVER_ALT}
