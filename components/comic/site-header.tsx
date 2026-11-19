@@ -13,12 +13,6 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('home')
 
-  // Prefix nav hrefs with '/' when not on the home page so anchor links
-  // navigate back to the home page's sections instead of going nowhere.
-  function navHref(id: string) {
-    return isHome ? `#${id}` : `/#${id}`
-  }
-
   useEffect(() => {
     if (!isHome) return
     const sections = navLinks
@@ -42,6 +36,23 @@ export function SiteHeader() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  // On the home page: smooth-scroll to section without any navigation.
+  // On other pages: navigate to /#section-id to go home then scroll.
+  function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
+    if (isHome) {
+      e.preventDefault()
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setOpen(false)
+    } else {
+      setOpen(false)
+    }
+  }
+
+  function navHref(id: string) {
+    return isHome ? `#${id}` : `/#${id}`
+  }
+
   const registerOpen = Boolean(siteConfig.registrationOpensAt)
   const registerHref = siteConfig.registrationUrl ?? '#register'
 
@@ -60,6 +71,7 @@ export function SiteHeader() {
               <li key={link.id}>
                 <a
                   href={navHref(link.id)}
+                  onClick={(e) => handleNavClick(e, link.id)}
                   aria-current={isHome && active === link.id ? 'true' : undefined}
                   className={cn(
                     'inline-block border-[3px] px-2.5 py-1 text-xs font-extrabold uppercase tracking-[0.12em] transition-transform hover:-rotate-2',
@@ -116,7 +128,7 @@ export function SiteHeader() {
             <li key={link.id}>
               <a
                 href={navHref(link.id)}
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleNavClick(e, link.id)}
                 className={cn(
                   'comic-shadow-sm block border-[3px] border-ink px-3 py-2 text-center font-display text-xl tracking-wide',
                   isHome && active === link.id ? 'bg-comic-yellow' : 'bg-paper',

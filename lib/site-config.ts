@@ -28,7 +28,7 @@ export const siteConfig = {
    * Official event start in ISO 8601 with timezone, e.g. "2027-02-14T09:00:00+05:30".
    * While null, the countdown displays "DATE TO BE ANNOUNCED".
    */
-  eventStart: null as string | null,
+  eventStart: '2026-11-30T09:00:00+05:30' as string | null,
 
   /** Human-readable date shown in badges once announced, e.g. "14–15 February 2027". */
   eventDateLabel: '30th November' as string | null,
@@ -82,32 +82,32 @@ export const siteConfig = {
     {
       title: 'Opening & Briefing',
       description: 'Kick-off, rules of engagement and the mission brief.',
-      time: null,
+      time: '09:00 AM · 30th November',
     },
     {
       title: 'Team Ideation',
       description: 'Teams pin down the problem and sketch their solution.',
-      time: null,
+      time: '10:00 AM · 30th November',
     },
     {
       title: 'Development Phase',
       description: 'Heads down. Build, wire, code, prototype and iterate.',
-      time: null,
+      time: '11:00 AM · 30th November',
     },
     {
       title: 'Mentoring Rounds',
       description: 'Check-ins with mentors to sharpen ideas along the way.',
-      time: null,
+      time: '03:00 PM · 30th November',
     },
     {
       title: 'Evaluation & Presentations',
       description: 'Teams pitch and demo what they built to the jury.',
-      time: null,
+      time: '08:00 AM · 1st December',
     },
     {
       title: 'Results & Closing',
       description: 'Winners revealed and the story comes to a close.',
-      time: null,
+      time: '11:00 AM · 1st December',
     },
   ] as TimelineItem[],
 }
