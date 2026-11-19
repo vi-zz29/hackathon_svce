@@ -1,18 +1,8 @@
 import { CalendarClock } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { SectionHeading, Starburst } from '@/components/comic/primitives'
-import { RegisterForm } from './RegisterForm'
 
-/**
- * /register — the registration page.
- *
- * The intro cover never plays here because this page uses its own layout
- * (no ComicExperience wrapper). SiteHeader + SiteFooter are added by
- * app/register/layout.tsx.
- */
 export default function RegisterPage() {
-  const registrationOpen = Boolean(siteConfig.registrationOpensAt)
-
   return (
     <section className="halftone scroll-mt-16">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
@@ -40,7 +30,6 @@ export default function RegisterPage() {
 
         {/* Comic panel card */}
         <div className="relative">
-          {/* Starburst decoration */}
           <Starburst
             className="animate-wobble -right-4 -top-8 z-10 size-24 text-xl sm:-right-6 sm:size-28 sm:text-2xl"
             color="bg-comic-yellow"
@@ -61,29 +50,18 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {!registrationOpen ? (
-              /* ── Registration not yet open ─────────────────────────── */
-              <div className="flex flex-col items-center gap-6 py-10 text-center">
-                <div className="inline-block -rotate-1 border-[3px] border-ink bg-comic-yellow px-6 py-3">
-                  <p className="font-display text-3xl tracking-wide sm:text-4xl">
-                    REGISTRATION OPENING SOON!
-                  </p>
-                </div>
-                <p className="max-w-md text-lg leading-relaxed text-ink/70">
-                  Registration hasn't opened yet. Check back here when the official date is
-                  announced.
-                </p>
-                <a
-                  href="/#register"
-                  className="inline-flex items-center gap-2 border-[3px] border-ink bg-paper px-5 py-2.5 font-display text-xl tracking-wide comic-shadow-sm hover:-translate-y-0.5 transition-transform"
-                >
-                  ← BACK TO SITE
-                </a>
-              </div>
-            ) : (
-              /* ── Live registration form ─────────────────────────────── */
-              <RegisterForm />
-            )}
+            {/* Google Form embed */}
+            <div className="w-full overflow-hidden">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSezFsgSAXNPY9pFXWZo0_JXk_NZA1_I9qCL2Kn32Ktdj-YpVQ/viewform?embedded=true"
+                width="100%"
+                style={{ minHeight: '100vh', border: 'none' }}
+                title="HYPERION Registration Form"
+                loading="lazy"
+              >
+                Loading form…
+              </iframe>
+            </div>
           </div>
         </div>
 
