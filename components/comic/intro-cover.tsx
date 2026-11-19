@@ -41,7 +41,7 @@ function MobileCover({ phase, onOpen, onSkip }: CoverProps) {
           fill
           priority
           sizes="(max-width: 767px) 100vw, 50vw"
-          className="object-cover object-[center_35%]"
+          className="object-contain object-center"
         />
         <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-ink/55 via-ink/20 to-transparent px-[5cqw] pb-[10cqw] pt-[4cqw]">
           <p className="text-[2.6cqw] font-extrabold tracking-[0.3em] text-comic-yellow">SVCE PRESENTS</p>
@@ -147,7 +147,7 @@ function WideCover({ phase, onOpen, onSkip }: CoverProps) {
             fill
             priority
             sizes="(max-width: 767px) 100vw, 50vw"
-            className="object-cover object-[center_30%]"
+            className="object-contain object-center"
           />
           <div
             className="speech-bubble !absolute right-5 top-[46%] -rotate-3 bg-paper px-5 py-2.5"
