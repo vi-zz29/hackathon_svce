@@ -52,7 +52,7 @@ function CreditsPopover() {
         )}
       >
         <Users className="size-3.5" aria-hidden="true" />
-        Credits
+        Team
       </button>
 
       {open && (
