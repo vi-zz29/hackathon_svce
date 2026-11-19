@@ -34,15 +34,19 @@ function MobileCover({ phase, onOpen, onSkip }: CoverProps) {
         <SvceLogo size={36} priority />
       </header>
 
-      <div className="relative min-h-0 flex-1 overflow-hidden border-y-4 border-ink bg-[#e63329]">
-        <Image
-          src="/images/cover-art.png"
-          alt={COVER_ALT}
-          fill
-          priority
-          sizes="(max-width: 767px) 100vw, 50vw"
-          className="object-contain object-center"
-        />
+      <div className="relative min-h-0 flex-1 overflow-hidden border-y-4 border-ink bg-paper">
+        <div className="absolute inset-0 p-2">
+          <div className="relative h-full w-full border-[3px] border-ink overflow-hidden">
+            <Image
+              src="/images/cover-art.png"
+              alt={COVER_ALT}
+              fill
+              priority
+              sizes="(max-width: 767px) 100vw, 50vw"
+              className="object-cover object-[center_15%]"
+            />
+          </div>
+        </div>
         <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-ink/55 via-ink/20 to-transparent px-[5cqw] pb-[10cqw] pt-[4cqw]">
           <p className="text-[2.6cqw] font-extrabold tracking-[0.3em] text-comic-yellow">SVCE PRESENTS</p>
           <h1 className="text-outline font-display text-[23cqw] leading-[0.85] tracking-wide text-comic-yellow">
@@ -140,15 +144,19 @@ function WideCover({ phase, onOpen, onSkip }: CoverProps) {
           </div>
         </div>
 
-        <div className="relative min-h-0 overflow-hidden bg-[#e63329] flex items-center justify-center">
-          <Image
-            src="/images/cover-art.png"
-            alt={COVER_ALT}
-            fill
-            priority
-            sizes="(max-width: 767px) 100vw, 50vw"
-            className="object-contain object-center"
-          />
+        <div className="relative min-h-0 overflow-hidden bg-paper">
+          <div className="absolute inset-0 p-2">
+            <div className="relative h-full w-full border-[3px] border-ink overflow-hidden">
+              <Image
+                src="/images/cover-art.png"
+                alt={COVER_ALT}
+                fill
+                priority
+                sizes="(max-width: 767px) 100vw, 50vw"
+                className="object-cover object-[center_15%]"
+              />
+            </div>
+          </div>
           <div
             className="speech-bubble !absolute right-5 top-[46%] -rotate-3 bg-paper px-5 py-2.5"
             style={{ ['--tail-x' as string]: '20%' }}
