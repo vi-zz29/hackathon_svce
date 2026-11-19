@@ -1,4 +1,4 @@
-import { ExternalLink, Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { navLinks, siteConfig } from '@/lib/site-config'
 import { SvceLogo } from './primitives'
 
@@ -26,29 +26,22 @@ export function SiteFooter() {
           <ul className="mt-5 flex flex-col gap-3">
             <li className="flex items-center gap-2">
               <Mail className="size-5 shrink-0 text-comic-blue" aria-hidden="true" />
-              {siteConfig.contactEmail ? (
-                <a href={`mailto:${siteConfig.contactEmail}`} className="underline underline-offset-4 hover:text-comic-yellow">
-                  {siteConfig.contactEmail}
-                </a>
-              ) : (
-                <span className="text-paper/75">Official email coming soon</span>
-              )}
+              <a
+                href={`mailto:${siteConfig.contactEmail}`}
+                className="underline underline-offset-4 hover:text-comic-yellow break-all"
+              >
+                {siteConfig.contactEmail}
+              </a>
             </li>
-            {siteConfig.socials.map((s) => (
-              <li key={s.label} className="flex items-center gap-2">
-                <ExternalLink className="size-5 shrink-0 text-comic-blue" aria-hidden="true" />
-                {s.href ? (
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-comic-yellow"
-                  >
-                    {s.label}
+            {siteConfig.contacts.map((c) => (
+              <li key={c.phone} className="flex items-center gap-2">
+                <Phone className="size-5 shrink-0 text-comic-blue" aria-hidden="true" />
+                <span className="text-paper/90">
+                  <a href={`tel:${c.phone}`} className="hover:text-comic-yellow">
+                    {c.phone}
                   </a>
-                ) : (
-                  <span className="text-paper/75">{s.label} — link coming soon</span>
-                )}
+                  <span className="ml-2 text-paper/60">{c.name}</span>
+                </span>
               </li>
             ))}
           </ul>

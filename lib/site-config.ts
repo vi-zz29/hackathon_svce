@@ -71,12 +71,14 @@ export const siteConfig = {
   prizes: '₹25,000 Prize Pool' as string | null,
 
   /** Official contact email. While null, shows "Official email coming soon". */
-  contactEmail: null as string | null,
+  contactEmail: 'hyperion.ascend.svce@gmail.com' as string | null,
 
-  socials: [
-    { label: 'Instagram', href: null },
-    { label: 'LinkedIn', href: null },
-  ] as SocialLink[],
+  socials: [] as SocialLink[],
+
+  contacts: [
+    { name: 'R Vishnuvardhan', phone: '8050082001' },
+    { name: 'Aman Vikas AV', phone: '7022959121' },
+  ],
 
   timeline: [
     {
