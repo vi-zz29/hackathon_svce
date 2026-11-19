@@ -31,7 +31,7 @@ export const siteConfig = {
   eventStart: null as string | null,
 
   /** Human-readable date shown in badges once announced, e.g. "14–15 February 2027". */
-  eventDateLabel: null as string | null,
+  eventDateLabel: '30th November' as string | null,
 
   /** Human-readable hackathon event date shown as a badge on the registration page, e.g. "30th November". */
   hackathonDate: '30th November' as string | null,

@@ -1,16 +1,26 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { navLinks, siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
 import { HyperionBadge, SvceLogo } from './primitives'
 
 export function SiteHeader() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('home')
 
+  // Prefix nav hrefs with '/' when not on the home page so anchor links
+  // navigate back to the home page's sections instead of going nowhere.
+  function navHref(id: string) {
+    return isHome ? `#${id}` : `/#${id}`
+  }
+
   useEffect(() => {
+    if (!isHome) return
     const sections = navLinks
       .map((l) => document.getElementById(l.id))
       .filter((el): el is HTMLElement => Boolean(el))
@@ -23,7 +33,7 @@ export function SiteHeader() {
     )
     sections.forEach((s) => observer.observe(s))
     return () => observer.disconnect()
-  }, [])
+  }, [isHome])
 
   useEffect(() => {
     if (!open) return
@@ -49,11 +59,11 @@ export function SiteHeader() {
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
-                  href={`#${link.id}`}
-                  aria-current={active === link.id ? 'true' : undefined}
+                  href={navHref(link.id)}
+                  aria-current={isHome && active === link.id ? 'true' : undefined}
                   className={cn(
                     'inline-block border-[3px] px-2.5 py-1 text-xs font-extrabold uppercase tracking-[0.12em] transition-transform hover:-rotate-2',
-                    active === link.id
+                    isHome && active === link.id
                       ? 'comic-shadow-sm -rotate-2 border-ink bg-comic-yellow'
                       : 'border-transparent hover:border-ink',
                   )}
@@ -105,11 +115,11 @@ export function SiteHeader() {
           {navLinks.map((link) => (
             <li key={link.id}>
               <a
-                href={`#${link.id}`}
+                href={navHref(link.id)}
                 onClick={() => setOpen(false)}
                 className={cn(
                   'comic-shadow-sm block border-[3px] border-ink px-3 py-2 text-center font-display text-xl tracking-wide',
-                  active === link.id ? 'bg-comic-yellow' : 'bg-paper',
+                  isHome && active === link.id ? 'bg-comic-yellow' : 'bg-paper',
                 )}
               >
                 {link.label}
