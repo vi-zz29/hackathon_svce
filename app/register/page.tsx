@@ -53,7 +53,7 @@ export default function RegisterPage() {
             {/* Google Form embed */}
             <div className="w-full overflow-hidden">
               <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSezFsgSAXNPY9pFXWZo0_JXk_NZA1_I9qCL2Kn32Ktdj-YpVQ/viewform?embedded=true"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSezFsgSAXNPY9pFXWZo0_JXk_NZA1_I9qCL2Kn32Ktdj-YpVQ/viewform?usp=preview&embedded=true"
                 width="100%"
                 style={{ minHeight: '100vh', border: 'none' }}
                 title="HYPERION Registration Form"

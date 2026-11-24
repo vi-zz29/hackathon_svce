@@ -28,13 +28,13 @@ export const siteConfig = {
    * Official event start in ISO 8601 with timezone, e.g. "2027-02-14T09:00:00+05:30".
    * While null, the countdown displays "DATE TO BE ANNOUNCED".
    */
-  eventStart: '2026-11-30T09:00:00+05:30' as string | null,
+  eventStart: '2026-12-04T09:00:00+05:30' as string | null,
 
   /** Human-readable date shown in badges once announced, e.g. "14–15 February 2027". */
-  eventDateLabel: '30th November' as string | null,
+  eventDateLabel: '4th & 5th December' as string | null,
 
   /** Human-readable hackathon event date shown as a badge on the registration page, e.g. "30th November". */
-  hackathonDate: '30th November' as string | null,
+  hackathonDate: '4th & 5th December' as string | null,
 
   /**
    * Internal registration route. Set to '/register' to enable the built-in
@@ -84,22 +84,22 @@ export const siteConfig = {
     {
       title: 'Opening & Briefing',
       description: 'Kick-off, rules of engagement and the mission brief.',
-      time: '09:00 AM · 30th November',
+      time: '09:00 AM · 4th December',
     },
     {
       title: 'Team Ideation',
       description: 'Teams pin down the problem and sketch their solution.',
-      time: '10:00 AM · 30th November',
+      time: '10:00 AM · 4th December',
     },
     {
       title: 'Development Phase',
       description: 'Heads down. Build, wire, code, prototype and iterate.',
-      time: '11:00 AM · 30th November',
+      time: '11:00 AM · 4th December',
     },
     {
       title: 'Mentoring Rounds',
       description: 'Check-ins with mentors to sharpen ideas along the way.',
-      time: '03:00 PM · 30th November',
+      time: '03:00 PM · 4th December',
     },
     {
       title: 'Evaluation & Presentations',
