@@ -14,6 +14,19 @@ const highlights = [
 export function HeroSection() {
   return (
     <section id="home" tabIndex={-1} className="halftone relative scroll-mt-16 outline-none">
+      {/* SVCE banner logo strip */}
+      <div className="border-b-[3px] border-ink bg-ink">
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+          <Image
+            src="/images/svce-banner.png"
+            alt="SVCE — Sri Venkateshwara College of Engineering, Estd. 2001, Autonomous Institute"
+            width={1200}
+            height={160}
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
+        </div>
+      </div>
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:px-8">
         <div data-stagger="110" className="flex flex-col items-start gap-7">
           <div data-reveal="up" className="flex flex-wrap items-center gap-3">

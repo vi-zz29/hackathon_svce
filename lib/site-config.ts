@@ -97,6 +97,11 @@ export const siteConfig = {
       time: '11:00 AM · 4th December',
     },
     {
+      title: 'Lunch & Dinner',
+      description: 'Meals provided — fuel up and keep building.',
+      time: '01:00 PM & 08:00 PM · 4th December',
+    },
+    {
       title: 'Mentoring Rounds',
       description: 'Check-ins with mentors to sharpen ideas along the way.',
       time: '10:00 PM · 4th December',
@@ -105,6 +110,11 @@ export const siteConfig = {
       title: 'Evaluation & Presentations',
       description: 'Teams pitch and demo what they built to the jury.',
       time: '09:00 AM · 5th December',
+    },
+    {
+      title: 'Breakfast',
+      description: 'Breakfast provided before the final results.',
+      time: '08:00 AM · 5th December',
     },
     {
       title: 'Results & Closing',
