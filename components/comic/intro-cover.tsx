@@ -27,11 +27,15 @@ function MobileCover({ phase, onOpen, onSkip }: CoverProps) {
   return (
     <article className="@container comic-shadow-lg relative flex h-full max-h-[64rem] w-full max-w-[min(100%,calc((100dvh-1.5rem)*0.64),38rem)] flex-col border-4 border-ink bg-ink md:hidden">
       <header className="flex items-center justify-between gap-2 px-3 py-2">
+        <Image
+          src="/images/svce-banner.png"
+          alt="SVCE — Sri Venkateshwara College of Engineering"
+          width={600}
+          height={80}
+          priority
+          className="h-7 w-auto"
+        />
         <HyperionBadge className="border-comic-yellow bg-transparent text-comic-yellow text-base" />
-        <p className="hidden truncate text-[0.65rem] font-extrabold tracking-[0.25em] text-comic-yellow @[22rem]:block">
-          {siteConfig.edition}
-        </p>
-        <SvceLogo size={36} priority />
       </header>
 
       <div className="relative min-h-0 flex-1 overflow-hidden border-y-4 border-ink bg-paper">
@@ -100,9 +104,15 @@ function WideCover({ phase, onOpen, onSkip }: CoverProps) {
   return (
     <article className="comic-shadow-lg relative hidden h-full max-h-[56rem] w-full max-w-7xl flex-col border-4 border-ink bg-ink md:flex">
       <header className="flex items-center justify-between gap-4 px-5 py-2.5">
+        <Image
+          src="/images/svce-banner.png"
+          alt="SVCE — Sri Venkateshwara College of Engineering"
+          width={600}
+          height={80}
+          priority
+          className="h-8 w-auto"
+        />
         <HyperionBadge className="border-comic-yellow bg-transparent text-xl text-comic-yellow" />
-        <p className="truncate text-xs font-extrabold tracking-[0.3em] text-comic-yellow">{siteConfig.edition}</p>
-        <SvceLogo size={44} priority />
       </header>
 
       <div className="grid min-h-0 flex-1 grid-cols-[1.05fr_1fr] border-t-4 border-ink">
