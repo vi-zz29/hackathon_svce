@@ -11,7 +11,7 @@ const faqs = [
   { q: 'What is the team size?', a: 'Each team must consist of 2–4 members.' },
   {
     q: 'What is the theme?',
-    a: 'Open Innovation. Participants can develop solutions from any engineering or interdisciplinary domain — the listed domains are examples, not mandatory tracks.',
+    a: 'Hardware & ECE modules, and AI/Software innovation. Teams can build embedded systems, IoT devices, electronic modules, or software and AI-driven solutions — both tracks are welcome.',
   },
   {
     q: 'Is the hackathon interdisciplinary?',

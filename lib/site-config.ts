@@ -99,17 +99,17 @@ export const siteConfig = {
     {
       title: 'Mentoring Rounds',
       description: 'Check-ins with mentors to sharpen ideas along the way.',
-      time: '03:00 PM · 4th December',
+      time: '10:00 PM · 4th December',
     },
     {
       title: 'Evaluation & Presentations',
       description: 'Teams pitch and demo what they built to the jury.',
-      time: '08:00 AM · 1st December',
+      time: '09:00 AM · 5th December',
     },
     {
       title: 'Results & Closing',
       description: 'Winners revealed and the story comes to a close.',
-      time: '11:00 AM · 1st December',
+      time: '11:00 AM · 5th December',
     },
   ] as TimelineItem[],
 }

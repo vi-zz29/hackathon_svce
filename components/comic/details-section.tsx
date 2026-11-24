@@ -7,7 +7,7 @@ const details = [
   { label: 'Team Size', value: '2–4 members per team.', icon: Users, tone: 'bg-comic-blue' },
   { label: 'Duration', value: '24 hours, non-stop.', icon: Clock, tone: 'bg-comic-red text-paper' },
   { label: 'Venue', value: `${siteConfig.venue}.`, icon: MapPin, tone: 'bg-paper' },
-  { label: 'Theme', value: 'Open Innovation.', icon: Lightbulb, tone: 'bg-comic-yellow' },
+  { label: 'Theme', value: 'Hardware, ECE & AI/Software Innovation.', icon: Lightbulb, tone: 'bg-comic-yellow' },
   {
     label: 'Event Date',
     value: siteConfig.eventDateLabel ?? 'To be announced soon.',
