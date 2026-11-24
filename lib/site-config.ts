@@ -81,45 +81,52 @@ export const siteConfig = {
   ],
 
   timeline: [
+    // ── Day 1 · 4th December ─────────────────────────────────────────
     {
       title: 'Opening & Briefing',
       description: 'Kick-off, rules of engagement and the mission brief.',
-      time: '09:00 AM · 4th December',
+      time: '09:00 AM · Day 1 · 4th December',
     },
     {
       title: 'Team Ideation',
       description: 'Teams pin down the problem and sketch their solution.',
-      time: '10:00 AM · 4th December',
+      time: '10:00 AM · Day 1 · 4th December',
     },
     {
       title: 'Development Phase',
       description: 'Heads down. Build, wire, code, prototype and iterate.',
-      time: '11:00 AM · 4th December',
+      time: '11:00 AM · Day 1 · 4th December',
     },
     {
-      title: 'Lunch & Dinner',
-      description: 'Meals provided — fuel up and keep building.',
-      time: '01:00 PM & 08:00 PM · 4th December',
+      title: 'Lunch',
+      description: 'Lunch provided — refuel and get back to building.',
+      time: '01:00 PM · Day 1 · 4th December',
     },
     {
       title: 'Mentoring Rounds',
       description: 'Check-ins with mentors to sharpen ideas along the way.',
-      time: '10:00 PM · 4th December',
+      time: '02:00 PM · Day 1 · 4th December',
+    },
+    {
+      title: 'Dinner',
+      description: 'Dinner provided — keep the momentum going through the night.',
+      time: '08:00 PM · Day 1 · 4th December',
+    },
+    // ── Day 2 · 5th December ─────────────────────────────────────────
+    {
+      title: 'Breakfast',
+      description: 'Breakfast provided to start the final stretch strong.',
+      time: '08:00 AM · Day 2 · 5th December',
     },
     {
       title: 'Evaluation & Presentations',
       description: 'Teams pitch and demo what they built to the jury.',
-      time: '09:00 AM · 5th December',
-    },
-    {
-      title: 'Breakfast',
-      description: 'Breakfast provided before the final results.',
-      time: '08:00 AM · 5th December',
+      time: '09:00 AM · Day 2 · 5th December',
     },
     {
       title: 'Results & Closing',
       description: 'Winners revealed and the story comes to a close.',
-      time: '11:00 AM · 5th December',
+      time: '11:00 AM · Day 2 · 5th December',
     },
   ] as TimelineItem[],
 }
