@@ -47,7 +47,7 @@ export const siteConfig = {
    * ISO 8601 datetime when registration opens, e.g. "2027-01-01T00:00:00+05:30".
    * While null, the status API returns "not_open" and buttons stay disabled.
    */
-  registrationOpensAt: new Date().toISOString() as string | null,
+  registrationOpensAt: null as string | null,
 
   /**
    * ISO 8601 datetime when registration closes. While null, registration stays
